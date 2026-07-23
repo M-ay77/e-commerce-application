@@ -8,9 +8,9 @@ const seedData = async () => {
         await connectDB();
 
         await Product.deleteMany();
-
+        console.log(products);
         await Product.insertMany(products);
-
+    
         console.log('Products inserted successfully!');
 
         process.exit();

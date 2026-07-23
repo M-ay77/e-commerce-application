@@ -19,5 +19,9 @@ async function startServer() {
     console.log(`Server is running on http://localhost:${PORT}`);
   });
 }
+const productRoutes = require("./routes/productRoutes");
+app.use("/api/products", productRoutes);
 
+const cartRoutes = require("./routes/cartRoutes");
+app.use("/api/cart", cartRoutes);
 startServer();
