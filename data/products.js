@@ -1,25 +1,20 @@
 const products = [
   {
-    name: "iPhone 15",
-    price: 999,
-    description: "Latest Apple smartphone",
+    name: "Laptop",
+    price: 1200,
     category: "Electronics",
-    image: "https://example.com/iphone15.jpg",
   },
   {
-    name: "Nike Air Max",
-    price: 150,
-    description: "Comfortable running shoes",
-    category: "Shoes",
-    image: "https://example.com/nike-air-max.jpg",
+    name: "Headphones",
+    price: 100,
+    category: "Electronics",
   },
   {
-    name: "Gaming Keyboard",
-    price: 80,
-    description: "Mechanical RGB keyboard",
-    category: "Accessories",
-    image: "https://example.com/keyboard.jpg",
+    name: "Coffee Mug",
+    price: 15,
+    category: "Kitchen",
   },
 ];
 
+module.exports = products;
 module.exports = products;
