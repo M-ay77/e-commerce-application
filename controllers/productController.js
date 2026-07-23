@@ -1,20 +1,15 @@
 const Product = require("../models/product");
 
-const getAllProducts = async (req, res) => {
+const getAllProducts = async (req, res, next) => {
   try {
     const products = await Product.find();
     res.status(200).json(products);
   } catch (error) {
-  console.error(error);
-
-  res.status(500).json({
-    success: false,
-    message: "Internal server error",
-    });
+    next(error);
   }
 };
 
-const getProductById = async (req, res) => {
+const getProductById = async (req, res, next) => {
   try {
     const product = await Product.findById(req.params.id);
 
@@ -27,27 +22,20 @@ const getProductById = async (req, res) => {
 
     res.status(200).json(product);
   } catch (error) {
-  console.error(error);
-
-  res.status(500).json({
-    success: false,
-    message: "Internal server error",
-    });
+    next(error);
   }
 };
-const createProduct = async (req, res) => {
+
+const createProduct = async (req, res, next) => {
   try {
     const product = await Product.create(req.body);
-
     res.status(201).json(product);
   } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: "Internal server error",
-    });
+    next(error);
   }
 };
-const updateProduct = async (req, res) => {
+
+const updateProduct = async (req, res, next) => {
   try {
     const product = await Product.findByIdAndUpdate(
       req.params.id,
@@ -67,15 +55,11 @@ const updateProduct = async (req, res) => {
 
     res.status(200).json(product);
   } catch (error) {
-    console.error(error);
-
-    res.status(500).json({
-      success: false,
-      message: "Internal server error",
-    });
+    next(error);
   }
 };
-const deleteProduct = async (req, res) => {
+
+const deleteProduct = async (req, res, next) => {
   try {
     const product = await Product.findByIdAndDelete(req.params.id);
 
@@ -91,14 +75,10 @@ const deleteProduct = async (req, res) => {
       message: "Product deleted successfully",
     });
   } catch (error) {
-    console.error(error);
-
-    res.status(500).json({
-      success: false,
-      message: "Internal server error",
-    });
+    next(error);
   }
 };
+
 module.exports = {
   getAllProducts,
   getProductById,

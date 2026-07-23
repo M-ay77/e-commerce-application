@@ -79,5 +79,5 @@ const addItemToCart = async (req, res) => {
 module.exports = {
   createCart,
   getCartById,
-  addItemToCart,
+  addItemToCart
 };

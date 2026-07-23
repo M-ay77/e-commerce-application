@@ -24,4 +24,12 @@ app.use("/api/products", productRoutes);
 
 const cartRoutes = require("./routes/cartRoutes");
 app.use("/api/cart", cartRoutes);
+ app.use((err, req, res, next) => {
+  console.error(err);
+
+  res.status(err.statusCode || 500).json({
+    success: false,
+    message: err.message || "Internal server error",
+  });
+});
 startServer();
