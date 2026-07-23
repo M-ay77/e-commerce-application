@@ -44,21 +44,13 @@ http://localhost:3000
 ## API Endpoints
 
 ### Products
-- GET `/api/products`
-- GET `/api/products/:id`
-- POST `/api/products`
-- PUT `/api/products/:id`
-- DELETE `/api/products/:id`
+- GET 
+- GET 
+- POST 
+- PUT 
+- DELETE 
 
 ### Cart
-- POST `/api/cart`
-- GET `/api/cart/:id`
-- POST `/api/cart/:id/items`
-
-## Technologies Used
-
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- Postman
+- POST 
+- GET 
+- POST
